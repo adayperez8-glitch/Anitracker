@@ -1,0 +1,38 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext'
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import Navbar from './components/Navbar/Navbar'
+import LoginPage from './pages/LoginPage/LoginPage'
+import HomePage from './pages/HomePage/HomePage'
+import SearchPage from './pages/SearchPage/SearchPage'
+import AnimeDetailPage from './pages/AnimeDetailPage/AnimeDetailPage'
+import MyListPage from './pages/MyListPage/MyListPage'
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
+
+function Layout() {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+        <Route path="/search" element={<ProtectedRoute><SearchPage /></ProtectedRoute>} />
+        <Route path="/anime/:id" element={<ProtectedRoute><AnimeDetailPage /></ProtectedRoute>} />
+        <Route path="/mylist" element={<ProtectedRoute><MyListPage /></ProtectedRoute>} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/*" element={<Layout />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
+  )
+}

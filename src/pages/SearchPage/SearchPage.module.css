@@ -1,0 +1,3 @@
+.main { max-width: 1200px; margin: 0 auto; padding: var(--space-2xl) var(--space-lg); }
+.title { font-family: var(--font-display); font-size: 3rem; letter-spacing: 4px; color: var(--color-accent); margin-bottom: var(--space-md); }
+.sub { color: var(--color-text-secondary); }
