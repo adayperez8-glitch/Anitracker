@@ -2,19 +2,29 @@ import { createContext, useContext, useState } from 'react'
 
 const AuthContext = createContext(null)
 
+const USERS = [
+  {
+    username: import.meta.env.VITE_LOGIN_USERNAME,
+    password: import.meta.env.VITE_LOGIN_PASSWORD,
+  },
+  {
+    username: import.meta.env.VITE_LOGIN_USERNAME_2,
+    password: import.meta.env.VITE_LOGIN_PASSWORD_2,
+  },
+]
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
-    // Persiste la sesión en sessionStorage
     const saved = sessionStorage.getItem('anitracker-user')
     return saved ? JSON.parse(saved) : null
   })
 
   const login = (username, password) => {
-    const validUser = import.meta.env.VITE_LOGIN_USERNAME
-    const validPass = import.meta.env.VITE_LOGIN_PASSWORD
-
-    if (username === validUser && password === validPass) {
-      const userData = { username }
+    const found = USERS.find(
+      (u) => u.username === username && u.password === password
+    )
+    if (found) {
+      const userData = { username: found.username }
       setUser(userData)
       sessionStorage.setItem('anitracker-user', JSON.stringify(userData))
       return true

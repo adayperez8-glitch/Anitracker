@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
+import { AnimeProvider } from './context/AnimeContext'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 import Navbar from './components/Navbar/Navbar'
 import LoginPage from './pages/LoginPage/LoginPage'
 import HomePage from './pages/HomePage/HomePage'
@@ -28,10 +30,14 @@ export default function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/*" element={<Layout />} />
-        </Routes>
+        <AnimeProvider>
+          <ErrorBoundary>
+            <Routes>
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/*" element={<Layout />} />
+            </Routes>
+          </ErrorBoundary>
+        </AnimeProvider>
       </AuthProvider>
     </BrowserRouter>
   )
