@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useWatchlist } from '../../context/WatchlistContext'
 import styles from './AnimeCard.module.css'
 
 const SCORE_COLOR = (score) => {
@@ -11,7 +12,9 @@ const SCORE_COLOR = (score) => {
 
 const AnimeCard = memo(function AnimeCard({ anime }) {
   const navigate = useNavigate()
+  const { isInWatchlist } = useWatchlist()
 
+  const inList = isInWatchlist(anime.mal_id)
   const score = anime.score
   const episodes = anime.episodes || '?'
   const image = anime.images?.jpg?.large_image_url || anime.images?.jpg?.image_url
@@ -30,6 +33,7 @@ const AnimeCard = memo(function AnimeCard({ anime }) {
         ) : (
           <div className={styles.noImage}>🎌</div>
         )}
+        {inList && <span className={styles.inListBadge}>✓ En mi lista</span>}
         {score && (
           <span className={styles.score} style={{ color: SCORE_COLOR(score) }}>
             ★ {score}

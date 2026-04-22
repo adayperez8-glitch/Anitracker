@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import { AnimeProvider } from './context/AnimeContext'
+import { WatchlistProvider } from './context/WatchlistContext'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 import Navbar from './components/Navbar/Navbar'
@@ -31,12 +32,14 @@ export default function App() {
     <BrowserRouter>
       <AuthProvider>
         <AnimeProvider>
-          <ErrorBoundary>
-            <Routes>
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/*" element={<Layout />} />
-            </Routes>
-          </ErrorBoundary>
+          <WatchlistProvider>
+            <ErrorBoundary>
+              <Routes>
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/*" element={<Layout />} />
+              </Routes>
+            </ErrorBoundary>
+          </WatchlistProvider>
         </AnimeProvider>
       </AuthProvider>
     </BrowserRouter>

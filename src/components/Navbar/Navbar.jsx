@@ -1,16 +1,41 @@
 import { useState } from 'react'
 import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
+import { useWatchlist } from '../../context/WatchlistContext'
 import styles from './Navbar.module.css'
 
+const WALLPAPERS = [
+  { label: '🌸 Default', value: 'none' },
+  { label: '🍥 Naruto', value: 'https://w.wallhaven.cc/full/wq/wallhaven-wq85er.jpg' },
+  { label: '⚔️ Attack on Titan', value: 'https://w.wallhaven.cc/full/4d/wallhaven-4dlm83.jpg' },
+  { label: '🔥 Demon Slayer', value: 'https://w.wallhaven.cc/full/rd/wallhaven-rdxk2j.jpg' },
+  { label: '🏴‍☠️ One Piece', value: 'https://w.wallhaven.cc/full/j3/wallhaven-j3d6rm.png' },
+  { label: '🟣 Jujutsu Kaisen', value: 'https://w.wallhaven.cc/full/5g/wallhaven-5g8775.png' },
+  { label: '🗿 Berserk', value: 'https://w.wallhaven.cc/full/l3/wallhaven-l3zyd2.jpg' },
+]
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [wallpaper, setWallpaper] = useState('none')
   const { user, logout } = useAuth()
+  const { watchlist } = useWatchlist()
   const navigate = useNavigate()
 
   const handleLogout = () => {
     logout()
     navigate('/login')
+  }
+
+  const handleWallpaper = (value) => {
+    setWallpaper(value)
+    if (value === 'none') {
+      document.body.style.backgroundImage = 'radial-gradient(ellipse at 20% 0%, rgba(124, 111, 208, 0.07) 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, rgba(58, 123, 213, 0.05) 0%, transparent 50%)'
+      document.body.style.backgroundSize = ''
+      document.body.style.backgroundAttachment = ''
+    } else {
+      document.body.style.backgroundImage = `url(${value})`
+      document.body.style.backgroundSize = 'cover'
+      document.body.style.backgroundAttachment = 'fixed'
+    }
   }
 
   return (
@@ -44,7 +69,21 @@ export default function Navbar() {
           <li>
             <NavLink to="/mylist" className={({ isActive }) => isActive ? styles.activeLink : styles.link} onClick={() => setMenuOpen(false)}>
               Mi Lista
+              {watchlist.length > 0 && (
+                <span className={styles.badge}>{watchlist.length}</span>
+              )}
             </NavLink>
+          </li>
+          <li>
+            <select
+              className={styles.wallpaperSelect}
+              value={wallpaper}
+              onChange={(e) => handleWallpaper(e.target.value)}
+            >
+              {WALLPAPERS.map((w) => (
+                <option key={w.value} value={w.value}>{w.label}</option>
+              ))}
+            </select>
           </li>
           {user && (
             <li>

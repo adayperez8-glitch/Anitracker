@@ -50,7 +50,7 @@
 }
 
 .filterActive {
-  composes: filter;
+  
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: white;
