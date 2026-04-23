@@ -80,9 +80,8 @@
 .title {
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--color-text-primary);
+  color: var(--color-accent);
   display: -webkit-box;
- 
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-height: 1.4;
@@ -98,12 +97,12 @@
 
 .episodes {
   font-size: 0.75rem;
-  color: var(--color-text-secondary);
+  color: var(--color-accent);
   font-weight: 600;
 }
 
 .year {
   font-size: 0.75rem;
-  color: var(--color-text-muted);
+  color: var(--color-accent);
   margin-left: auto;
 }

@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage/HomePage'
 import SearchPage from './pages/SearchPage/SearchPage'
 import AnimeDetailPage from './pages/AnimeDetailPage/AnimeDetailPage'
 import MyListPage from './pages/MyListPage/MyListPage'
+import CalendarPage from './pages/CalendarPage/CalendarPage'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 
 function Layout() {
@@ -21,6 +22,7 @@ function Layout() {
         <Route path="/search" element={<ProtectedRoute><SearchPage /></ProtectedRoute>} />
         <Route path="/anime/:id" element={<ProtectedRoute><AnimeDetailPage /></ProtectedRoute>} />
         <Route path="/mylist" element={<ProtectedRoute><MyListPage /></ProtectedRoute>} />
+        <Route path="/calendar" element={<ProtectedRoute><CalendarPage /></ProtectedRoute>} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

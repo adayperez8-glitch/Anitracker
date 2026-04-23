@@ -31,10 +31,20 @@ export default function Navbar() {
       document.body.style.backgroundImage = 'radial-gradient(ellipse at 20% 0%, rgba(124, 111, 208, 0.07) 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, rgba(58, 123, 213, 0.05) 0%, transparent 50%)'
       document.body.style.backgroundSize = ''
       document.body.style.backgroundAttachment = ''
+      document.documentElement.style.setProperty('--color-text-primary', '#2a2060')
+      document.documentElement.style.setProperty('--color-text-secondary', '#6a62a0')
+      document.documentElement.style.setProperty('--color-text-muted', '#aaa8cc')
+      document.documentElement.style.setProperty('--color-bg-card', '#f4f4fb')
+      document.documentElement.style.setProperty('--color-bg-elevated', '#eeeef8')
     } else {
       document.body.style.backgroundImage = `url(${value})`
       document.body.style.backgroundSize = 'cover'
       document.body.style.backgroundAttachment = 'fixed'
+      document.documentElement.style.setProperty('--color-text-primary', '#ffffff')
+      document.documentElement.style.setProperty('--color-text-secondary', '#ffffff')
+      document.documentElement.style.setProperty('--color-text-muted', '#3a7bd5')
+      document.documentElement.style.setProperty('--color-bg-card', 'rgba(255, 255, 255, 0.15)')
+      document.documentElement.style.setProperty('--color-bg-elevated', 'rgba(255, 255, 255, 0.1)')
     }
   }
 
@@ -72,6 +82,11 @@ export default function Navbar() {
               {watchlist.length > 0 && (
                 <span className={styles.badge}>{watchlist.length}</span>
               )}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/calendar" className={({ isActive }) => isActive ? styles.activeLink : styles.link} onClick={() => setMenuOpen(false)}>
+              Calendario
             </NavLink>
           </li>
           <li>

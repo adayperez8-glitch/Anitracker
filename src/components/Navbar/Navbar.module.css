@@ -59,7 +59,7 @@
   font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 1px;
-  color: var(--color-text-secondary);
+  color: #3a7bd5;
   text-transform: uppercase;
   transition: color 0.2s;
   position: relative;
@@ -67,7 +67,6 @@
   align-items: center;
   gap: var(--space-xs);
 }
-.link:hover { color: var(--color-text-primary); }
 
 .activeLink {
   font-weight: 700;
@@ -75,7 +74,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   position: relative;
-  color: var(--color-accent);
+  color: #3a7bd5;
   display: flex;
   align-items: center;
   gap: var(--space-xs);
@@ -143,8 +142,8 @@
 
 .logoutBtn {
   background: transparent;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
+  border: 1px solid #3a7bd5;
+  color: #3a7bd5;
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-sm);
   font-size: 0.8rem;

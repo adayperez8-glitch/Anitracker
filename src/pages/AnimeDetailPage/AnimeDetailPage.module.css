@@ -266,11 +266,11 @@
 }
 
 .synopsis {
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   line-height: 1.8;
   font-size: 0.95rem;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
 }
-
 .infoGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -299,6 +299,7 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--color-text-primary);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 
 .loadingContainer {

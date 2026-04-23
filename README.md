@@ -21,7 +21,8 @@ Día 3 — SearchPage with pagination, AnimeDetailPage, WatchlistContext, MyList
 
 -Añadí los tests unitarios con Vitest y Testing Library — 7 tests que cubren el WatchlistContext (vacío, añadir/eliminar, sin duplicados), el AnimeContext (búsqueda exitosa y manejo de error) y el componente AnimeCard (renderiza título, score y episodios). También extraje la lógica de la API en un custom hook useAnimeSearch para reutilización. Tuve que ajustar la configuración de Vitest porque la carpeta de tests tenía un nombre distinto al que esperaba el setup.
 
-Día 4 — próximo
+Día 4 — Implementé también el calendario de emisión semanal — muestra los animes que emiten cada día, resalta el día actual y cachea los resultados. Tuve que añadir un filtro de duplicados porque la API devuelve a veces el mismo anime varias veces.
+
 Día 5 — próximo
 
 ⏱️ Tiempo que me ha llevado cada parte
@@ -39,7 +40,8 @@ AnimeDetailPage — detalle por ID, stats y sinopsis -20 min
 WatchlistContext, MyListPage, wallpapers y badge -45 min
 Tests, custom hook y configuración de Vitest -30 min
 Resolución de errores e iteraciones -30 min
-Total: 5h 40min
+CalendarPage y ajustes visuales finales — 1h
+Total: ~6h 30min
 
 Seguridad
 Las credenciales del login están en .env que está en .gitignore — nunca se sube a GitHub. La API de Jikan es pública y no necesita clave, así que no hay nada sensible en las llamadas a la API. Solo subo .env.example como referencia para que se sepa qué variables hay que configurar.
