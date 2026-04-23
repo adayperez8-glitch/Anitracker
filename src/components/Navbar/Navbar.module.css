@@ -43,9 +43,12 @@
   font-family: var(--font-display);
   font-size: 1.6rem;
   letter-spacing: 3px;
-  transition: color 0.2s;
+  transition: all 0.3s;
 }
-.logo:hover { color: var(--color-accent); }
+.logo:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 8px rgba(58, 123, 213, 0.4);
+}
 .logoAccent { color: var(--color-accent); }
 
 .links {
@@ -61,11 +64,18 @@
   letter-spacing: 1px;
   color: #3a7bd5;
   text-transform: uppercase;
-  transition: color 0.2s;
+  transition: all 0.3s;
   position: relative;
   display: flex;
   align-items: center;
   gap: var(--space-xs);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.link:hover {
+  color: #7dd4fc;
+  text-shadow: 0 0 8px rgba(125, 212, 252, 0.5);
 }
 
 .activeLink {
@@ -78,7 +88,16 @@
   display: flex;
   align-items: center;
   gap: var(--space-xs);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s;
 }
+
+.activeLink:hover {
+  color: #7dd4fc;
+  text-shadow: 0 0 8px rgba(125, 212, 252, 0.5);
+}
+
 .activeLink::after {
   content: '';
   position: absolute;
@@ -120,24 +139,31 @@
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 
 .wallpaperSelect:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  border-color: #7dd4fc;
+  color: #7dd4fc;
+  box-shadow: 0 0 8px rgba(125, 212, 252, 0.3);
 }
 
 .wallpaperSelect:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: #7dd4fc;
+  box-shadow: 0 0 6px rgba(125, 212, 252, 0.3);
 }
 
 .userInfo {
   font-size: 0.85rem;
   color: var(--color-accent-2);
   font-weight: 700;
+  transition: all 0.3s;
+}
+
+.userInfo:hover {
+  color: #7dd4fc;
+  text-shadow: 0 0 8px rgba(125, 212, 252, 0.5);
 }
 
 .logoutBtn {
@@ -148,11 +174,13 @@
   border-radius: var(--radius-sm);
   font-size: 0.8rem;
   font-weight: 700;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
+
 .logoutBtn:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  border-color: #7dd4fc;
+  color: #7dd4fc;
+  box-shadow: 0 0 8px rgba(125, 212, 252, 0.3);
 }
 
 .hamburger {
@@ -162,6 +190,7 @@
   background: transparent;
   padding: var(--space-xs);
 }
+
 .bar {
   display: block;
   width: 22px;
@@ -169,6 +198,11 @@
   background: var(--color-text-primary);
   border-radius: 2px;
   transition: all 0.3s;
+}
+
+.hamburger:hover .bar {
+  background: #7dd4fc;
+  box-shadow: 0 0 4px rgba(125, 212, 252, 0.5);
 }
 
 @media (max-width: 600px) {

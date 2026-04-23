@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+*, *::before, *::after, button, a, input, textarea, select, [role="button"] {
+  cursor: url('./assets/frieren-staff.png'), auto !important;
+}
+
 :root {
   --color-bg: #ffffff;
   --color-bg-card: #f4f4fb;
@@ -66,7 +70,7 @@ body {
 
 a { text-decoration: none; color: inherit; }
 
-button { cursor: pointer; font-family: var(--font-body); border: none; outline: none; }
+button { font-family: var(--font-body); border: none; outline: none; }
 
 img { display: block; max-width: 100%; }
 

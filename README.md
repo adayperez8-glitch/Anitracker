@@ -65,6 +65,7 @@ Buscar y verificar manualmente los wallpapers de anime porque los enlaces que me
 Darme cuenta de que el array de wallpapers tenía duplicados por tener los imports y las URLs al mismo tiempo
 Detectar que la carpeta de tests se llamaba tests en vez de __test__ y que por eso el setup no encontraba los archivos
 Decidir la temática, los colores, el efecto cristal de la navbar, los poderes del login y la feature de progreso por capítulos
+Identificar que el calendario mostraba los mismos animes todos los días y describir el problema para buscar una solución
 Hacer todos los commits diarios y gestionar el repositorio en GitHub
 
 Lo que aprendí en el proceso:
