@@ -70,3 +70,6 @@ Hacer todos los commits diarios y gestionar el repositorio en GitHub
 
 Lo que aprendí en el proceso:
 Trabajar con IA no significa que el código funcione solo. Cada error que apareció lo tuve que identificar yo, describir con precisión y entender la solución para poder aplicarla. Si no hubiese entendido lo que estaba haciendo no habría podido avanzar.
+
+Link del deploy: https://anitracker-xi.vercel.app/login
+
