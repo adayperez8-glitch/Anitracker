@@ -11,16 +11,16 @@ export function AnimeProvider({ children }) {
   const [error, setError] = useState(null)
   const [pagination, setPagination] = useState(null)
 
-  const search = useCallback(async (query, page = 1) => {
+  const search = useCallback(async (query, page = 1, genre = '', type = '') => {
     if (!query.trim()) return
     const controller = new AbortController()
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch(
-        `${BASE_URL}/anime?q=${encodeURIComponent(query)}&page=${page}&limit=12&sfw=true`,
-        { signal: controller.signal }
-      )
+      let url = `${BASE_URL}/anime?q=${encodeURIComponent(query)}&page=${page}&limit=12&sfw=true`
+      if (genre) url += `&genres=${genre}`
+      if (type) url += `&type=${type}`
+      const res = await fetch(url, { signal: controller.signal })
       if (!res.ok) throw new Error('Error al buscar. Inténtalo de nuevo.')
       const data = await res.json()
       if (!data.data || data.data.length === 0) {
