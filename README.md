@@ -27,21 +27,21 @@ Día 5 — próximo
 
 ⏱️ Tiempo que me ha llevado cada parte
 Diseño — decidir tema, colores, estructura y poderes del login -30 min
-Setup del proyecto y estructura de carpetas -20 min
-Login page — formulario, validación y estilos -45 min
-AuthContext — dos usuarios, sessionStorage y variables de entorno -20 min
-Navbar — efecto cristal, degradado y menú hamburguesa -45 min
-CSS global — variables de color y tema blanco/lavanda -30 min
-AnimeContext — integración con la API de Jikan -25 min
-HomePage — filtros, grid y paginación -20 min
-AnimeCard, SkeletonCard y Grid -20 min
+Setup del proyecto y estructura de carpetas -1h 20 min
+Login page — formulario, validación y estilos -2h 45 min
+AuthContext — dos usuarios, sessionStorage y variables de entorno -1h 20 min
+Navbar — efecto cristal, degradado y menú hamburguesa -1 h45 min
+CSS global — variables de color y tema blanco/lavanda -1 h30 min
+AnimeContext — integración con la API de Jikan -1h 25 min
+HomePage — filtros, grid y paginación -1h 20 min
+AnimeCard, SkeletonCard y Grid -50 min
 SearchPage — formulario, resultados y paginación -20 min
-AnimeDetailPage — detalle por ID, stats y sinopsis -20 min
+AnimeDetailPage — detalle por ID, stats y sinopsis -50 min
 WatchlistContext, MyListPage, wallpapers y badge -45 min
-Tests, custom hook y configuración de Vitest -30 min
-Resolución de errores e iteraciones -30 min
+Tests, custom hook y configuración de Vitest -50 min
+Resolución de errores e iteraciones -50 min
 CalendarPage y ajustes visuales finales — 1h
-Total: ~6h 30min
+Total: ~16h 30min
 
 Seguridad
 Las credenciales del login están en .env que está en .gitignore — nunca se sube a GitHub. La API de Jikan es pública y no necesita clave, así que no hay nada sensible en las llamadas a la API. Solo subo .env.example como referencia para que se sepa qué variables hay que configurar.
